@@ -1,5 +1,5 @@
 {
-  "name": "argos360",
+  "name": "silvacuore",
   "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
@@ -15,7 +15,7 @@
   "dependencies": {
     "@angular/common": "^14.2.12",
     "@angular/core": "^14.2.12",
-    "@angular/fire": "^7.5.0",
+    "@angular/fire": "^7.4.0",
     "@angular/forms": "^14.2.12",
     "@angular/platform-browser": "^14.2.12",
     "@angular/platform-browser-dynamic": "^14.2.12",
@@ -39,7 +39,7 @@
     "firebase": "^9.17.1",
     "geofire-common": "^5.2.0",
     "image-conversion": "^2.1.1",
-    "mathjax-angular": "^2.1.1",
+    "mathjax-angular": "2.1.1",
     "mathjs": "^10.6.4",
     "ol": "^6.15.1",
     "plotly.js-dist": "^2.18.2",
