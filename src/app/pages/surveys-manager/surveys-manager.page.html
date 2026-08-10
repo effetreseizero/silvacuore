@@ -87,13 +87,13 @@
             <h3>{{item.localita}}  {{item.short_date}}</h3>
             <p>{{item.user_email}}<p>
           </ion-label>
-          <ion-button slot="end" shape="round" color="primary" size="small" (click)="promoteToReviewFromPublic(item.properties.id)">
+          <ion-button slot="end" shape="round" color="primary" size="small" (click)="promoteToReviewFromPublic(item.id)">
             <ion-icon size="small" slot="icon-only" name="checkbox-outline"></ion-icon>
           </ion-button>
-          <ion-button slot="end" shape="round" color="secondary" size="small" (click)="editSurvey(item.properties.id)">
+          <ion-button slot="end" shape="round" color="secondary" size="small" (click)="editSurvey(item.id)">
             <ion-icon size="small" slot="icon-only" name="document-text-outline"></ion-icon>
           </ion-button>
-          <ion-button slot="end" shape="round" color="danger" size="small" (click)="promoteToArchiveFromPublic(item.properties.id)">
+          <ion-button slot="end" shape="round" color="danger" size="small" (click)="promoteToArchiveFromPublic(item.id)">
             <ion-icon size="small" slot="icon-only" name="library-outline"></ion-icon>
           </ion-button>
          
