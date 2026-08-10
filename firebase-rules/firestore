@@ -1,0 +1,42 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /users_photo/{pathId=**} {
+      allow read, write: if request.auth != null;
+    }
+    match /public_surveys/{pathId=**}{
+    	allow read;
+  		allow write: if request.auth != null && 
+        firestore.get(/databases/(default)/documents/roles/$(request.auth.uid)).data.isAdmin == true;
+    }
+  }
+}
+
+
+
+
+
+/////////OLD
+
+
+
+
+
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /users_photo/{pathId=**} {
+      allow read, write: if request.auth != null;
+    }
+    match /public_surveys/{pathId=**}{
+    	allow read;
+  		allow write: if 
+      	request.auth.uid=="02r5x4ynk8aOZAnN7vQQQpXmBij2"
+        || request.auth.uid=="Gsu7z0H5c7coWwzqN6flprDUmov1"
+        || request.auth.uid=="haq5V0P5ZRRBeR2zy3dIsErznGv1"
+        || request.auth.uid=="1jSgQlkN9uXuztSePU04hmSf3of2"
+        || request.auth.uid=="dxHd8CqyOFXyMMQbnqyDPLdJBKQ2"
+        || request.auth.uid=="ASbl8a1FzLg8eN3lWfuKs1iKdJB2";
+    }
+  }
+}
