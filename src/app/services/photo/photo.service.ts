@@ -2,7 +2,7 @@
 import { Injectable } from '@angular/core';
 
 
-import {Camera, CameraResultType} from '@capacitor/camera'
+import {Camera, CameraResultType, CameraSource} from '@capacitor/camera'
 
 
 @Injectable({
@@ -15,13 +15,12 @@ export class PhotoService {
 
   constructor() { }
 
-  public async addNewToGallery(role): Promise<Photo> {
+  public async addNewToGallery(): Promise<Photo> {
     // Take a photo
 
-   
     const capturedPhoto = await Camera.getPhoto({
       resultType: CameraResultType.Uri, 
-      source: role, 
+      source: CameraSource.Prompt, 
       width:800,
       quality: 70,
       correctOrientation: true 
