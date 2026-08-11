@@ -27,6 +27,7 @@ import { ActionSheetController } from '@ionic/angular';
 
 import { SurveyHelperPopoverComponent } from '../../components/survey-helper-popover/survey-helper-popover.component';
 
+import {CameraSource} from '@capacitor/camera'
 
 
 //https://ionicframework.com/docs/angular/your-first-app/2-taking-photos
@@ -535,6 +536,7 @@ export class SurveyPage implements OnInit {
         await alert.present();
         await alert.onDidDismiss();
       }
+      /* replaced with CameraSource.Prompt in photo service
       let role = "";
       if(this.platform.is("desktop")){
         role = "PHOTOS"
@@ -545,13 +547,13 @@ export class SurveyPage implements OnInit {
             {
               text: 'Fotocamera',
               icon: 'camera-outline',
-              role: 'CAMERA',
+              role: CameraSource.Camera,
               handler: () => {
               }
             }, {
               text: 'Galleria',
               icon: 'images-outline',
-              role: 'PHOTOS',
+              role: CameraSource.Photos,
               handler: () => {
               }
             }
@@ -561,7 +563,8 @@ export class SurveyPage implements OnInit {
     
         role = await (await actionSheet.onDidDismiss()).role;
       }
-      const capturedPhoto = await this.photoService.addNewToGallery(role);
+      */
+      const capturedPhoto = await this.photoService.addNewToGallery();
       if(position!=null){
         this.photos[position]= capturedPhoto;
       }else{
